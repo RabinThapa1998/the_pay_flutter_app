@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:the_pay/util/coffee_tile.dart';
+import 'package:the_pay/util/coffee_type.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -56,6 +57,16 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 25,
             ),
+            Container(
+                height: 40,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    CoffeeType(coffeeType: "Cappucino", isSelected: true),
+                    CoffeeType(coffeeType: "Latte", isSelected: false),
+                    CoffeeType(coffeeType: "Milk", isSelected: false),
+                  ],
+                )),
             Expanded(
               child: ListView(
                 scrollDirection: Axis.horizontal,
