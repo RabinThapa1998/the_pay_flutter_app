@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:the_pay/pages/contestent_page.dart';
+import 'package:the_pay/pages/home.dart';
 import 'package:the_pay/pages/home_page.dart';
 
 void main() {
@@ -14,9 +16,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'the pay',
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: ContestentPage(),
       theme:
-          ThemeData(brightness: Brightness.dark, primarySwatch: Colors.orange),
+          ThemeData(brightness: Brightness.light, primarySwatch: Colors.orange),
     );
   }
 }
