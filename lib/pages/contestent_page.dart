@@ -12,7 +12,6 @@ class _ContestentPageState extends State<ContestentPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(actions: []),
       body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(

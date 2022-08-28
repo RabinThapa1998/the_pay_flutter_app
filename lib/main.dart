@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'the pay',
       debugShowCheckedModeBanner: false,
-      home: FormPage(),
+      home: Home(),
       theme:
           ThemeData(brightness: Brightness.light, primarySwatch: Colors.orange),
     );
