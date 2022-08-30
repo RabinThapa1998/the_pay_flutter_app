@@ -7,11 +7,8 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Container(
-        child: ContestentPage(),
-      ),
+    return Container(
+      child: ContestentPage(),
     );
   }
 }

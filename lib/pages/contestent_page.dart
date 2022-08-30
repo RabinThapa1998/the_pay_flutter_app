@@ -11,22 +11,20 @@ class ContestentPage extends StatefulWidget {
 class _ContestentPageState extends State<ContestentPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-              child: GridView(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2, childAspectRatio: 1 / 1.9),
-                  children: [
-                ContestentTile(),
-                ContestentTile(),
-                ContestentTile(),
-                ContestentTile(),
-                ContestentTile(),
-                ContestentTile(),
-                ContestentTile(),
-              ]))),
-    );
+    return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+            child: GridView(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2, childAspectRatio: 1 / 1.9),
+                children: [
+              ContestentTile(),
+              ContestentTile(),
+              ContestentTile(),
+              ContestentTile(),
+              ContestentTile(),
+              ContestentTile(),
+              ContestentTile(),
+            ])));
   }
 }
