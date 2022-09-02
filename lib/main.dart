@@ -3,6 +3,7 @@ import 'package:the_pay/pages/contestent_page.dart';
 import 'package:the_pay/pages/form_page.dart';
 import 'package:the_pay/pages/home.dart';
 import 'package:the_pay/pages/home_page.dart';
+import 'package:the_pay/pages/placeholder_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,11 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   int currentIndex = 0;
-  final screens = [Home(), FormPage(), HomePage()];
+  final screens = [
+    Home(name: '', number: '', email: ''),
+    FormPage(),
+    PlaceholderPage()
+  ];
   @override
   Widget build(BuildContext context) {
     print(currentIndex);
@@ -26,7 +31,9 @@ class _MyAppState extends State<MyApp> {
       title: 'the pay',
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          appBar: AppBar(),
+          appBar: AppBar(
+            title: const Text("THe"),
+          ),
           bottomNavigationBar: BottomNavigationBar(
               currentIndex: currentIndex,
               onTap: (index) => setState(() => currentIndex = index),
@@ -41,7 +48,7 @@ class _MyAppState extends State<MyApp> {
                     backgroundColor: Colors.blue),
                 BottomNavigationBarItem(
                     icon: Icon(Icons.person_off_outlined),
-                    label: "Feed",
+                    label: "Placeholder",
                     backgroundColor: Colors.blue),
               ]),
           body: Container(child: screens[currentIndex])),

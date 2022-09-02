@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:the_pay/pages/home.dart';
 
 class FormPage extends StatefulWidget {
   const FormPage({Key? key}) : super(key: key);
@@ -11,6 +12,7 @@ class _FormPageState extends State<FormPage> {
   var name = '';
   String number = '';
   String email = '';
+  String data = '';
   @override
   final _formKey = GlobalKey<FormState>();
 
@@ -92,7 +94,21 @@ class _FormPageState extends State<FormPage> {
                         //     SnackBar(content: Text('Data is in processing.')));
                       }
                     },
-                    child: const Text('submit'))
+                    child: const Text('submit')),
+                ElevatedButton(
+                    onPressed: () async {
+                      data = await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Home(
+                                  name: name, number: number, email: email)));
+                      print(data);
+                      setState(() {
+                        data = data;
+                      });
+                    },
+                    child: const Text('Push to Home Page')),
+                Text('Data:${data}')
               ],
             )));
   }
