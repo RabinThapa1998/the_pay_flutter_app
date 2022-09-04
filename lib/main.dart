@@ -47,7 +47,7 @@ class _MyAppState extends State<MyApp> {
                     label: "Feed",
                     backgroundColor: Colors.blue),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.person_off_outlined),
+                    icon: Icon(Icons.data_array),
                     label: "Placeholder",
                     backgroundColor: Colors.blue),
               ]),
