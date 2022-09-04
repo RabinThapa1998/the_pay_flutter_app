@@ -53,7 +53,7 @@ class _MyAppState extends State<MyApp> {
               ]),
           body: Container(child: screens[currentIndex])),
       theme:
-          ThemeData(brightness: Brightness.dark, primarySwatch: Colors.orange),
+          ThemeData(brightness: Brightness.light, primarySwatch: Colors.orange),
     );
   }
 }
