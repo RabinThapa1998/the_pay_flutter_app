@@ -4,6 +4,7 @@ import 'package:the_pay/pages/form_page.dart';
 import 'package:the_pay/pages/home.dart';
 import 'package:the_pay/pages/home_page.dart';
 import 'package:the_pay/pages/placeholder_page.dart';
+import 'package:the_pay/pages/pokemon_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +23,7 @@ class _MyAppState extends State<MyApp> {
   final screens = [
     Home(name: '', number: '', email: ''),
     FormPage(),
-    PlaceholderPage()
+    PokemonPage()
   ];
   @override
   Widget build(BuildContext context) {
