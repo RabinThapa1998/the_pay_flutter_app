@@ -42,20 +42,22 @@ class _PlaceholderPageState extends State<PlaceholderPage> {
                 fetchPost();
               },
               child: Text("Fetch")),
-          ListView.builder(
-              itemCount: _postData.length,
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              itemBuilder: (context, i) {
-                final post = _postData[i];
-                return Card(
-                  child: ListTile(
-                    leading: Icon(Icons.album),
-                    title: Text("Title :${post["title"]}"),
-                    subtitle: Text("Body :${post["body"]}"),
-                  ),
-                );
-              }),
+          Expanded(
+            child: ListView.builder(
+                itemCount: _postData.length,
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                itemBuilder: (context, i) {
+                  final post = _postData[i];
+                  return Card(
+                    child: ListTile(
+                      leading: Icon(Icons.album),
+                      title: Text("Title :${post["title"]}"),
+                      subtitle: Text("Body :${post["body"]}"),
+                    ),
+                  );
+                }),
+          ),
         ],
       ),
     );
