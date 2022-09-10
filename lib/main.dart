@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:the_pay/pages/contestent_page.dart';
-import 'package:the_pay/pages/form_page.dart';
-import 'package:the_pay/pages/home.dart';
-import 'package:the_pay/pages/home_page.dart';
-import 'package:the_pay/pages/placeholder_page.dart';
-import 'package:the_pay/pages/pokemon_page.dart';
+import 'package:get/get.dart';
+import 'package:the_pay/screens/Contestantpage.dart';
+import 'package:the_pay/theme/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,43 +15,23 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  // This widget is the root of your application.
-  int currentIndex = 0;
-  final screens = [
-    Home(name: '', number: '', email: ''),
-    FormPage(),
-    PokemonPage()
-  ];
   @override
   Widget build(BuildContext context) {
-    print(currentIndex);
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'the pay',
       debugShowCheckedModeBanner: false,
+      theme: lightThemeData,
+      darkTheme: darkThemeData,
       home: Scaffold(
-          appBar: AppBar(
-            title: const Text("THe"),
-          ),
-          bottomNavigationBar: BottomNavigationBar(
-              currentIndex: currentIndex,
-              onTap: (index) => setState(() => currentIndex = index),
-              items: [
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.home),
-                    label: "Home",
-                    backgroundColor: Colors.blue),
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.favorite),
-                    label: "Feed",
-                    backgroundColor: Colors.blue),
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.data_array),
-                    label: "Placeholder",
-                    backgroundColor: Colors.blue),
-              ]),
-          body: Container(child: screens[currentIndex])),
-      theme:
-          ThemeData(brightness: Brightness.light, primarySwatch: Colors.orange),
+        appBar: AppBar(
+          title: const Text("The Pay"),
+        ),
+        body: Container(
+            child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: ContestantPage(),
+        )),
+      ),
     );
   }
 }
