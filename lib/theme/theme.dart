@@ -14,7 +14,7 @@ final floatingActionButtonThemeData = FloatingActionButtonThemeData(
 final elevatedButtonThemeData = ElevatedButtonThemeData(
   style: TextButton.styleFrom(
     backgroundColor: primaryColor,
-    padding: EdgeInsets.all(defaultPadding),
+    padding: EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
   ),
 );
 final lightThemeData = ThemeData(

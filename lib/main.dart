@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:the_pay/screens/Contestantpage.dart';
+import 'package:the_pay/screens/NavigationPage.dart';
 import 'package:the_pay/theme/theme.dart';
 
 void main() {
@@ -14,6 +15,15 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
+class DashboardController extends GetxController {
+  var tabIndex = 0;
+
+  void changeTabIndex(int index) {
+    tabIndex = index;
+    update();
+  }
+}
+
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
@@ -22,16 +32,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       theme: lightThemeData,
       darkTheme: darkThemeData,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("The Pay"),
-        ),
-        body: Container(
-            child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: ContestantPage(),
-        )),
-      ),
+      home: NavigationPage(),
     );
   }
 }
