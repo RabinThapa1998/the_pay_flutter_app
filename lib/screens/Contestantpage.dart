@@ -1,6 +1,8 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:the_pay/screens/VotePage.dart';
 
 class ContestantPage extends StatefulWidget {
   ContestantPage({Key? key}) : super(key: key);
@@ -31,7 +33,11 @@ class _ContestantPageState extends State<ContestantPage> {
             SizedBox(
               height: 10,
             ),
-            ElevatedButton(onPressed: () {}, child: Text("Vote Now"))
+            ElevatedButton(
+                onPressed: () {
+                  Get.to(VotePage(), arguments: "hello from contestant");
+                },
+                child: Text("Vote Now"))
           ]),
         );
       }),
