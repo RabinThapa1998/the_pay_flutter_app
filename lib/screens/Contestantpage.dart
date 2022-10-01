@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:the_pay/screens/VotePage.dart';
@@ -17,7 +15,7 @@ class _ContestantPageState extends State<ContestantPage> {
     return Container(
         child: GridView.count(
       crossAxisCount: 2,
-      children: List.generate(6, (index) {
+      children: List.generate(10, (index) {
         return Card(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             CircleAvatar(

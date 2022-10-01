@@ -22,7 +22,7 @@ class NavigationPage extends StatelessWidget {
               children: screens,
             )),
         bottomNavigationBar: Obx(() => BottomNavigationBar(
-              type: BottomNavigationBarType.shifting,
+              type: BottomNavigationBarType.fixed,
               selectedItemColor: Colors.white,
               unselectedItemColor: Colors.white38,
               showSelectedLabels: true,

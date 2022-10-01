@@ -49,39 +49,23 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
-          height: 200,
-          width: 300,
-          child: Swiper(
-            itemBuilder: (BuildContext context, int index) {
-              return Image.asset(
-                imageList[index],
-                fit: BoxFit.cover,
-              );
-            },
-            itemCount: imageList.length,
-            pagination: SwiperPagination(),
-            // control: SwiperControl(),
-            // autoplay: false,
-            // duration: 1000,
-          ),
-        ),
-        Stack(children: [
-          Container(
-            height: 400,
-            width: 300,
-            child: Image.asset('images/program1.jpg', fit: BoxFit.cover),
-          ),
-          Positioned(child: Text('Programs'), top: 10, left: 10),
-          Positioned(
-              child: Icon(Icons.heart_broken_outlined), bottom: 10, left: 10),
-          Positioned(
-              child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Text("like")))
-        ])
+        // SizedBox(
+        //   height: 200,
+        //   width: 300,
+        //   child: Swiper(
+        //     itemBuilder: (BuildContext context, int index) {
+        //       return Image.asset(
+        //         imageList[index],
+        //         fit: BoxFit.cover,
+        //       );
+        //     },
+        //     itemCount: imageList.length,
+        //     pagination: SwiperPagination(),
+        //     // control: SwiperControl(),
+        //     // autoplay: false,
+        //     // duration: 1000,
+        //   ),
+        // ),
       ]),
     ));
   }
