@@ -78,17 +78,48 @@ class _ContestantPageState extends State<ContestantPage> {
               return GridView.builder(
                   gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                       maxCrossAxisExtent: 200,
-                      childAspectRatio: 3 / 2,
+                      childAspectRatio: 12 / 16,
                       crossAxisSpacing: 20,
                       mainAxisSpacing: 20),
                   itemCount: contestantsList.length,
                   itemBuilder: (BuildContext ctx, index) {
-                    return Container(
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color: Colors.amber,
-                          borderRadius: BorderRadius.circular(15)),
-                      child: Text(contestantsList[index].fullName),
+                    return Card(
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(
+                          color: Theme.of(context).colorScheme.outline,
+                        ),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(12)),
+                      ),
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 10,
+                          ),
+                          CircleAvatar(
+                            backgroundImage:
+                                AssetImage('assets/images/contestant.jpg'),
+                            radius: 50,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(contestantsList[index].fullName,
+                              style: Theme.of(context).textTheme.headline6),
+                          Text(contestantsList[index].email,
+                              style: Theme.of(context).textTheme.bodyMedium),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          ElevatedButton(
+                              onPressed: () {
+                                Get.to(VotePage(),
+                                    arguments: contestantsList[index].id);
+                              },
+                              child: Text("Vote Now"))
+                        ],
+                      ),
                     );
                   });
             } else if (snapshot.hasError) {
