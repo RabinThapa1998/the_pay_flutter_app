@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-const primaryColor = Color(0xFFF25A0B0);
-const blueColor = Color(0xFF1FA5C3);
+const primaryColor = Color(0xFFF19C071);
+const secondaryColor = Color(0xFFEF69719);
+const blueColor = Color.fromARGB(255, 61, 199, 197);
 
 //Light Theme
 const secondaryColorLightTheme = Color(0xFFEEF1F7);

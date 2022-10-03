@@ -41,34 +41,6 @@ class _ContestantPageState extends State<ContestantPage> {
 
   @override
   Widget build(BuildContext context) {
-    // return Container(
-    //     child: GridView.count(
-    //   crossAxisCount: 2,
-    //   children: List.generate(6, (index) {
-    //     return Card(
-    //       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-    //         CircleAvatar(
-    //           backgroundImage: AssetImage('images/contestant.jpg'),
-    //           radius: 50,
-    //         ),
-    //         SizedBox(
-    //           height: 10,
-    //         ),
-    //         Text("contestant name",
-    //             style: Theme.of(context).textTheme.headline6),
-    //         Text("location", style: Theme.of(context).textTheme.bodyMedium),
-    //         SizedBox(
-    //           height: 10,
-    //         ),
-    //         ElevatedButton(
-    //             onPressed: () {
-    //               Get.to(VotePage(), arguments: "hello from contestant");
-    //             },
-    //             child: Text("Vote Now"))
-    //       ]),
-    //     );
-    //   }),
-    // ));
     return Container(
       child: FutureBuilder(
         future: _futureTodos,
