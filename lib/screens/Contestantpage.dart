@@ -86,7 +86,7 @@ class _ContestantPageState extends State<ContestantPage> {
                           ),
                           ElevatedButton(
                               onPressed: () {
-                                Get.to(VotePage(),
+                                Get.to(() => VotePage(),
                                     arguments: contestantsList[index].id);
                               },
                               child: Text("Vote Now"))
