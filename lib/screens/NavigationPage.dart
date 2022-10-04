@@ -23,10 +23,10 @@ class NavigationPage extends StatelessWidget {
             )),
         bottomNavigationBar: Obx(() => BottomNavigationBar(
               type: BottomNavigationBarType.fixed,
-              selectedItemColor: Colors.white,
-              unselectedItemColor: Colors.white38,
+              selectedItemColor: Theme.of(context).primaryColor,
+              unselectedItemColor: Theme.of(context).disabledColor,
               showSelectedLabels: true,
-              showUnselectedLabels: false,
+              showUnselectedLabels: true,
               onTap: (index) {
                 bottomNavigationController.changeIndex(index);
               },

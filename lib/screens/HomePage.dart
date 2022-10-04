@@ -27,26 +27,23 @@ class HomePage extends StatelessWidget {
           ),
           elevation: 0,
           color: Theme.of(context).splashColor,
-          child: SizedBox(
-            height: 100,
-            width: 300,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: [
-                    Text('Hello'),
-                    Text("Robin"),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Text('Vote for the best'),
-                    Icon(Icons.arrow_forward_ios),
-                  ],
-                ),
-              ],
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Column(
+                children: [
+                  Text('Hello'),
+                  Text("Robin"),
+                ],
+              ),
+              Column(
+                children: [
+                  Text('Vote for the best'),
+                  Icon(Icons.arrow_forward_ios),
+                ],
+              ),
+            ],
           ),
         ),
         // SizedBox(
