@@ -11,9 +11,12 @@ class VotePage extends StatefulWidget {
 class _VotePageState extends State<VotePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Column(
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('The pay'),
+        ),
+        body: Column(
           children: [
             Card(
               child: Row(
