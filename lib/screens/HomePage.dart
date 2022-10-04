@@ -46,23 +46,39 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
-        // SizedBox(
-        //   height: 200,
-        //   width: 300,
-        //   child: Swiper(
-        //     itemBuilder: (BuildContext context, int index) {
-        //       return Image.asset(
-        //         imageList[index],
-        //         fit: BoxFit.cover,
-        //       );
-        //     },
-        //     itemCount: imageList.length,
-        //     pagination: SwiperPagination(),
-        //     // control: SwiperControl(),
-        //     // autoplay: false,
-        //     // duration: 1000,
-        //   ),
-        // ),
+        SizedBox(
+          height: 200,
+          child: Swiper(
+            itemBuilder: (BuildContext context, int index) {
+              // return Image.asset(
+              //   imageList[index],
+              //   fit: BoxFit.cover,
+              // );
+              return Container(
+                child: Row(children: [
+                  Image.asset(
+                    imageList[index],
+                    fit: BoxFit.cover,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Column(
+                    children: [
+                      Text('Indian Idol'),
+                      Text('Vote for the best lorem lorem '),
+                    ],
+                  ),
+                ]),
+              );
+            },
+            itemCount: imageList.length,
+            pagination: SwiperPagination(),
+            // control: SwiperControl(),
+            autoplay: true,
+            duration: 1000,
+          ),
+        ),
       ]),
     ));
   }
