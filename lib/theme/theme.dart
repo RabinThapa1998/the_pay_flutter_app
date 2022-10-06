@@ -16,6 +16,11 @@ final elevatedButtonThemeData = ElevatedButtonThemeData(
   ),
 );
 final lightThemeData = ThemeData(
+  appBarTheme: AppBarTheme(
+    backgroundColor: primaryColor,
+    elevation: 0.0,
+    iconTheme: IconThemeData(color: Colors.white),
+  ),
   brightness: Brightness.light,
   primaryColor: primaryColor,
   textTheme: GoogleFonts.poppinsTextTheme(ThemeData.light().textTheme),

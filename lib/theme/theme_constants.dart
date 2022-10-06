@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-const primaryColor = Color(0xFFF19C071);
+const primaryColor = Colors.deepPurpleAccent;
 const secondaryColor = Color(0xFFEF69719);
 const blueColor = Color.fromARGB(255, 61, 199, 197);
 

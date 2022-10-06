@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
+import 'package:the_pay/components/programsCard.dart';
 
 class HomePage extends StatelessWidget {
   final imageList = [
@@ -18,68 +19,12 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return SingleChildScrollView(
-        child: Center(
-      child: Column(children: [
-        Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-          elevation: 0,
-          color: Theme.of(context).splashColor,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Column(
-                children: [
-                  Text('Hello'),
-                  Text("Robin"),
-                ],
-              ),
-              Column(
-                children: [
-                  Text('Vote for the best'),
-                  Icon(Icons.arrow_forward_ios),
-                ],
-              ),
-            ],
-          ),
-        ),
-        SizedBox(
-          height: 200,
-          child: Swiper(
-            itemBuilder: (BuildContext context, int index) {
-              // return Image.asset(
-              //   imageList[index],
-              //   fit: BoxFit.cover,
-              // );
-              return Container(
-                child: Row(children: [
-                  Image.asset(
-                    imageList[index],
-                    fit: BoxFit.cover,
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Column(
-                    children: [
-                      Text('Indian Idol'),
-                      Text('Vote for the best lorem lorem '),
-                    ],
-                  ),
-                ]),
-              );
-            },
-            itemCount: imageList.length,
-            pagination: SwiperPagination(),
-            // control: SwiperControl(),
-            autoplay: true,
-            duration: 1000,
-          ),
-        ),
-      ]),
-    ));
+        child: Column(children: [
+      programsCard(screenWidth),
+      programsCard(screenWidth),
+      programsCard(screenWidth)
+    ]));
   }
 }
