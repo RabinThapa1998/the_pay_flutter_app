@@ -37,10 +37,10 @@ Padding programsCard(double screenWidth, String title, String desc) {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Text("X-Factor",
+                            Text(title,
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 25)),
-                            Text("Vote for the best lorem lorem ",
+                            Text(desc,
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 20)),
                           ],
