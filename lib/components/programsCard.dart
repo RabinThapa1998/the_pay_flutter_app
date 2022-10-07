@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-Padding programsCard(double screenWidth, String title, String desc) {
+Padding programsCard(context, double screenWidth, String title, String desc) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: Stack(
@@ -28,24 +28,45 @@ Padding programsCard(double screenWidth, String title, String desc) {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(20)),
             ),
-            height: 100,
+            height: 120,
             child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: ClipRect(
                     child: new BackdropFilter(
                         filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(title,
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 25)),
                             Text(desc,
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 20)),
+                                  color: Colors.grey,
+                                  fontSize: 15,
+                                )),
                           ],
                         )))),
           ),
+        ),
+        Positioned(
+          top: 50,
+          child: Container(
+              height: 80,
+              width: 80,
+              decoration: BoxDecoration(
+                color: Theme.of(context).primaryColor,
+                borderRadius: BorderRadius.all(Radius.circular(100)),
+              ),
+              child: Center(
+                child: Text(
+                  "More",
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+              )),
         ),
       ],
     ),
