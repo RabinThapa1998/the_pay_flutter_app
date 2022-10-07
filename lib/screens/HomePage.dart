@@ -50,8 +50,12 @@ class _HomePageState extends State<HomePage> {
             return ListView.builder(
                 itemCount: programsList.length,
                 itemBuilder: (context, i) {
-                  return programsCard(context, screenWidth,
-                      programsList[i].name, programsList[i].desc);
+                  return programsCard(
+                      context,
+                      screenWidth,
+                      programsList[i].name,
+                      programsList[i].desc,
+                      programsList[i].id);
                 });
           } else if (snapshot.hasError) {
             return Text('${snapshot.error}');

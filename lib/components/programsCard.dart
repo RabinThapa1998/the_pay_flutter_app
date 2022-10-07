@@ -1,8 +1,11 @@
 import 'dart:ui';
+import 'package:get/get.dart';
 
 import 'package:flutter/material.dart';
+import 'package:the_pay/screens/ProgramDetailPage.dart';
 
-Padding programsCard(context, double screenWidth, String title, String desc) {
+Padding programsCard(
+    context, double screenWidth, String title, String desc, String id) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: Stack(
@@ -53,7 +56,7 @@ Padding programsCard(context, double screenWidth, String title, String desc) {
           top: 50,
           child: ElevatedButton(
             onPressed: () {
-              print("Clicked");
+              Get.to(() => ProgramDetailPage(), arguments: id);
             },
             style: ElevatedButton.styleFrom(shape: CircleBorder()),
             child: Container(
