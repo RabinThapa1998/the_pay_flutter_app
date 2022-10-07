@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-Padding programsCard(double screenWidth) {
+Padding programsCard(double screenWidth, String title, String desc) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: Stack(
