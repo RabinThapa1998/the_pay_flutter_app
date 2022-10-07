@@ -51,22 +51,24 @@ Padding programsCard(context, double screenWidth, String title, String desc) {
         ),
         Positioned(
           top: 50,
-          child: Container(
-              height: 80,
-              width: 80,
-              decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
-                borderRadius: BorderRadius.all(Radius.circular(100)),
-              ),
-              child: Center(
-                child: Text(
-                  "More",
-                  style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                ),
-              )),
+          child: ElevatedButton(
+            onPressed: () {
+              print("Clicked");
+            },
+            style: ElevatedButton.styleFrom(shape: CircleBorder()),
+            child: Container(
+                height: 80,
+                width: 80,
+                child: Center(
+                  child: Text(
+                    "More",
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                )),
+          ),
         ),
       ],
     ),
