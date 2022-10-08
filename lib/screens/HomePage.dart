@@ -60,9 +60,14 @@ class _HomePageState extends State<HomePage> {
                   pinned: _pinned,
                   snap: _snap,
                   floating: _floating,
-                  expandedHeight: 160.0,
+                  forceElevated: true,
+                  elevation: 10,
+                  expandedHeight: 180.0,
                   flexibleSpace: const FlexibleSpaceBar(
-                    title: Text('The Pay'),
+                    centerTitle: true,
+                    title: Text(
+                      'The Pay',
+                    ),
                     background: FlutterLogo(),
                   ),
                   shape: ContinuousRectangleBorder(
