@@ -48,34 +48,52 @@ class _HomePageState extends State<HomePage> {
       builder: ((context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           if (snapshot.hasData) {
-            return CustomScrollView(slivers: [
-              SliverAppBar(
-                pinned: _pinned,
-                snap: _snap,
-                floating: _floating,
-                expandedHeight: 160.0,
-                flexibleSpace: const FlexibleSpaceBar(
-                  title: Text('The Pay'),
-                  background: FlutterLogo(),
+            return RefreshIndicator(
+              onRefresh: () async {
+                programsList = [];
+                setState(() {
+                  _futurePrograms = fetchPrograms();
+                });
+              },
+              child: CustomScrollView(slivers: [
+                SliverAppBar(
+                  pinned: _pinned,
+                  snap: _snap,
+                  floating: _floating,
+                  expandedHeight: 160.0,
+                  flexibleSpace: const FlexibleSpaceBar(
+                    title: Text('The Pay'),
+                    background: FlutterLogo(),
+                  ),
+                  shape: ContinuousRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(30),
+                          bottomRight: Radius.circular(30))),
                 ),
-                shape: ContinuousRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(30),
-                        bottomRight: Radius.circular(30))),
-              ),
-              SliverList(
-                delegate:
-                    SliverChildBuilderDelegate(childCount: programsList.length,
-                        (BuildContext context, int i) {
-                  return programsCard(
-                      context,
-                      screenWidth,
-                      programsList[i].name,
-                      programsList[i].desc,
-                      programsList[i].id);
-                }),
-              )
-            ]);
+                // ListView.builder(
+                //     itemCount: programsList.length,
+                //     itemBuilder: (context, i) {
+                // return programsCard(
+                //     context,
+                //     screenWidth,
+                //     programsList[i].name,
+                //     programsList[i].desc,
+                //     programsList[i].id);
+                //     }),
+                SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                      childCount: programsList.length,
+                      (BuildContext context, int i) {
+                    return programsCard(
+                        context,
+                        screenWidth,
+                        programsList[i].name,
+                        programsList[i].desc,
+                        programsList[i].id);
+                  }),
+                )
+              ]),
+            );
           } else if (snapshot.hasError) {
             return Text('${snapshot.error}');
           }

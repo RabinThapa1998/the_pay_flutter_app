@@ -7,6 +7,7 @@ import 'package:the_pay/screens/ProgramDetailPage.dart';
 Padding programsCard(
     context, double screenWidth, String title, String desc, String id) {
   return Padding(
+    key: ValueKey(id),
     padding: const EdgeInsets.all(8.0),
     child: Stack(
       alignment: AlignmentDirectional.topCenter,
