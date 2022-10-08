@@ -58,7 +58,7 @@ class _ProgramDetailPageState extends State<ProgramDetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(programDetail["name"]),
+        title: Text('Program Details'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
