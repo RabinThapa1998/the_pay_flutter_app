@@ -63,16 +63,6 @@ class _HomePageState extends State<HomePage> {
                         bottomLeft: Radius.circular(30),
                         bottomRight: Radius.circular(30))),
               ),
-              // ListView.builder(
-              //     itemCount: programsList.length,
-              //     itemBuilder: (context, i) {
-              // return programsCard(
-              //     context,
-              //     screenWidth,
-              //     programsList[i].name,
-              //     programsList[i].desc,
-              //     programsList[i].id);
-              //     }),
               SliverList(
                 delegate:
                     SliverChildBuilderDelegate(childCount: programsList.length,
@@ -90,7 +80,7 @@ class _HomePageState extends State<HomePage> {
             return Text('${snapshot.error}');
           }
         }
-        return const CircularProgressIndicator();
+        return Center(child: const CircularProgressIndicator());
       }),
     );
   }
