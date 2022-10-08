@@ -32,7 +32,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late Future _futurePrograms;
-
+  bool _pinned = true;
+  bool _snap = false;
+  bool _floating = false;
   void initState() {
     super.initState();
     _futurePrograms = fetchPrograms();
@@ -41,28 +43,55 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    return Container(
-        child: FutureBuilder(
+    return FutureBuilder(
       future: _futurePrograms,
       builder: ((context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           if (snapshot.hasData) {
-            return ListView.builder(
-                itemCount: programsList.length,
-                itemBuilder: (context, i) {
+            return CustomScrollView(slivers: [
+              SliverAppBar(
+                pinned: _pinned,
+                snap: _snap,
+                floating: _floating,
+                expandedHeight: 160.0,
+                flexibleSpace: const FlexibleSpaceBar(
+                  title: Text('The Pay'),
+                  background: FlutterLogo(),
+                ),
+                shape: ContinuousRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(30),
+                        bottomRight: Radius.circular(30))),
+              ),
+              // ListView.builder(
+              //     itemCount: programsList.length,
+              //     itemBuilder: (context, i) {
+              // return programsCard(
+              //     context,
+              //     screenWidth,
+              //     programsList[i].name,
+              //     programsList[i].desc,
+              //     programsList[i].id);
+              //     }),
+              SliverList(
+                delegate:
+                    SliverChildBuilderDelegate(childCount: programsList.length,
+                        (BuildContext context, int i) {
                   return programsCard(
                       context,
                       screenWidth,
                       programsList[i].name,
                       programsList[i].desc,
                       programsList[i].id);
-                });
+                }),
+              )
+            ]);
           } else if (snapshot.hasError) {
             return Text('${snapshot.error}');
           }
         }
         return const CircularProgressIndicator();
       }),
-    ));
+    );
   }
 }

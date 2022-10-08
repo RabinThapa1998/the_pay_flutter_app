@@ -15,9 +15,9 @@ class NavigationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          appBar: AppBar(
-            title: const Text('The pay'),
-          ),
+          // appBar: AppBar(
+          //   title: const Text('The pay'),
+          // ),
           body: Obx(() => IndexedStack(
                 index: bottomNavigationController.selectedIndex.value,
                 children: screens,
