@@ -94,6 +94,7 @@ class _HomePageState extends State<HomePage> {
                         screenWidth,
                         programsList[i].name,
                         programsList[i].desc,
+                        programsList[i].image_url,
                         programsList[i].id);
                   }),
                 )

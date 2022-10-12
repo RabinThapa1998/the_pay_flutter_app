@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:the_pay/screens/ProgramDetailPage.dart';
 
-Padding programsCard(
-    context, double screenWidth, String title, String desc, String id) {
+Padding programsCard(context, double screenWidth, String title, String desc,
+    String image_url, String id) {
   return Padding(
     key: ValueKey(id),
     padding: const EdgeInsets.all(8.0),
@@ -19,7 +19,7 @@ Padding programsCard(
 
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/banner_1.jpg'),
+              image: NetworkImage(image_url),
               fit: BoxFit.cover,
             ),
             borderRadius: BorderRadius.all(Radius.circular(20)),

@@ -8,6 +8,7 @@ class Programs {
   Programs({
     required this.name,
     required this.desc,
+    required this.image_url,
     required this.active,
     required this.createdAt,
     required this.updatedAt,
@@ -16,6 +17,7 @@ class Programs {
 
   String name;
   String desc;
+  String image_url;
   bool active;
   DateTime createdAt;
   DateTime updatedAt;
@@ -28,6 +30,7 @@ class Programs {
   factory Programs.fromMap(Map<String, dynamic> json) => Programs(
         name: json["name"],
         desc: json["desc"],
+        image_url: json["image_url"],
         active: json["active"],
         createdAt: DateTime.parse(json["createdAt"]),
         updatedAt: DateTime.parse(json["updatedAt"]),
@@ -37,6 +40,7 @@ class Programs {
   Map<String, dynamic> toMap() => {
         "name": name,
         "desc": desc,
+        "image_url": image_url,
         "active": active,
         "createdAt": createdAt.toIso8601String(),
         "updatedAt": updatedAt.toIso8601String(),
