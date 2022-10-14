@@ -17,9 +17,11 @@ class _VotePageState extends State<VotePage> {
           title: const Text('Vote'),
         ),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Card(
               margin: const EdgeInsets.all(10),
+              elevation: 0,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
@@ -41,7 +43,10 @@ class _VotePageState extends State<VotePage> {
             ),
             Text(
               "Packages",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey),
             ),
             Expanded(
                 child: ListView.builder(
