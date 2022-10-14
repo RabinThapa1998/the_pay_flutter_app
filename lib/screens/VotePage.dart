@@ -36,10 +36,28 @@ class _VotePageState extends State<VotePage> {
                     itemBuilder: (BuildContext context, int index) {
                       return ListTile(
                         leading: Container(
-                          child: Text("2"),
+                          height: 50,
+                          width: 50,
                           decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(10),
+                              color: Colors.orange,
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text("2",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                              Text("Votes",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                            ],
                           ),
                         ),
                         title: const Text('Rs 12'),
