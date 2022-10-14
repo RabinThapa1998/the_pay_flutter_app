@@ -14,7 +14,7 @@ class _VotePageState extends State<VotePage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('The pay'),
+          title: const Text('Vote'),
         ),
         body: Column(
           children: [
@@ -26,14 +26,24 @@ class _VotePageState extends State<VotePage> {
                 ],
               ),
             ),
+            Text(
+              "Packages",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
             Expanded(
                 child: ListView.builder(
-                    itemCount: 5,
+                    itemCount: 10,
                     itemBuilder: (BuildContext context, int index) {
                       return ListTile(
-                        leading: const Icon(Icons.abc),
-                        title: const Text('Contestant'),
-                        subtitle: const Text('Subtitle'),
+                        leading: Container(
+                          child: Text("2"),
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                        title: const Text('Rs 12'),
+                        subtitle: const Text('Submit 2 votes for Rs 12'),
                         trailing: const Icon(Icons.arrow_forward_ios),
                       );
                     }))
