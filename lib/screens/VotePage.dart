@@ -9,6 +9,16 @@ class VotePage extends StatefulWidget {
 }
 
 class _VotePageState extends State<VotePage> {
+  late List paymentSchema;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    paymentSchema =
+        Get.arguments != null ? Get.arguments["payment_schema"] : [];
+    print("----------payment schema ${paymentSchema} ");
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -52,9 +62,7 @@ class _VotePageState extends State<VotePage> {
             ),
             Expanded(
                 child: ListView.builder(
-                    itemCount: Get.arguments != null
-                        ? Get.arguments["payment_schema"].length
-                        : 0,
+                    itemCount: paymentSchema.length,
                     itemBuilder: (BuildContext context, int index) {
                       return ListTile(
                         leading: Container(
@@ -67,7 +75,7 @@ class _VotePageState extends State<VotePage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Text("2",
+                              Text(paymentSchema[index]["votes"].toString(),
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 20,
@@ -82,8 +90,9 @@ class _VotePageState extends State<VotePage> {
                             ],
                           ),
                         ),
-                        title: const Text('Rs 12'),
-                        subtitle: const Text('Submit 2 votes for Rs 12'),
+                        title: Text(paymentSchema[index]["votes"].toString()),
+                        subtitle: Text(
+                            'Submit ${paymentSchema[index]["votes"].toString()} votes for Rs ${paymentSchema[index]["cost"].toString()}'),
                         trailing: const Icon(Icons.arrow_forward_ios),
                       );
                     }))
