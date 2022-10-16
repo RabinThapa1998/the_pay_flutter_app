@@ -9,7 +9,7 @@ class Contestants {
     required this.email,
     required this.phone,
     required this.fullName,
-    required this.photoUrl,
+    required this.image_url,
     required this.program,
     required this.payment,
     required this.age,
@@ -23,7 +23,7 @@ class Contestants {
   String email;
   String phone;
   String fullName;
-  String photoUrl;
+  String image_url;
   String program;
   String payment;
   int age;
@@ -42,7 +42,7 @@ class Contestants {
         email: json["email"],
         phone: json["phone"],
         fullName: json["full_name"],
-        photoUrl: json["photo_url"],
+        image_url: json["photo_url"],
         program: json["program"],
         payment: json["payment"],
         age: json["age"],
@@ -57,7 +57,7 @@ class Contestants {
         "email": email,
         "phone": phone,
         "full_name": fullName,
-        "photo_url": photoUrl,
+        "photo_url": image_url,
         "program": program,
         "payment": payment,
         "age": age,

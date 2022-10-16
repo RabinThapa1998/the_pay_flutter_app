@@ -101,9 +101,10 @@ class _ProgramDetailPageState extends State<ProgramDetailPage> {
                                       height: 10,
                                     ),
                                     CircleAvatar(
-                                      backgroundImage: AssetImage(
-                                          'assets/images/contestant.jpg'),
+                                      backgroundImage: NetworkImage(
+                                          contestantsList[index].image_url),
                                       radius: 50,
+                                      backgroundColor: Colors.transparent,
                                     ),
                                     SizedBox(
                                       height: 10,
