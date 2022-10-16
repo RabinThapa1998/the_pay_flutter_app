@@ -36,7 +36,9 @@ class _VotePageState extends State<VotePage> {
                             AssetImage('assets/images/contestant.jpg'),
                       ),
                     ),
-                    Text(Get.arguments.toString()),
+                    Text(Get.arguments != null
+                        ? Get.arguments["constestant"].toString()
+                        : 'loading...'),
                   ],
                 ),
               ),
@@ -50,7 +52,9 @@ class _VotePageState extends State<VotePage> {
             ),
             Expanded(
                 child: ListView.builder(
-                    itemCount: 10,
+                    itemCount: Get.arguments != null
+                        ? Get.arguments["payment_schema"].length
+                        : 0,
                     itemBuilder: (BuildContext context, int index) {
                       return ListTile(
                         leading: Container(

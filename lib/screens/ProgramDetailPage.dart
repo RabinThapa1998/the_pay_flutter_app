@@ -122,9 +122,12 @@ class _ProgramDetailPageState extends State<ProgramDetailPage> {
                                     ),
                                     ElevatedButton(
                                         onPressed: () {
-                                          Get.to(() => VotePage(),
-                                              arguments:
-                                                  contestantsList[index].id);
+                                          Get.to(() => VotePage(), arguments: {
+                                            "constestant":
+                                                contestantsList[index].id,
+                                            "payment_schema":
+                                                programDetail["payment_schema"]
+                                          });
                                         },
                                         child: Text("Vote Now"))
                                   ],
