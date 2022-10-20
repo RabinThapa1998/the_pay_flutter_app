@@ -49,7 +49,7 @@ class _VotePageState extends State<VotePage> {
                         ),
                       ),
                       Text(Get.arguments != null
-                          ? Get.arguments["constestant"].toString()
+                          ? Get.arguments["fullName"].toString()
                           : 'loading...'),
                     ],
                   ),
