@@ -51,9 +51,12 @@ class _VotePageState extends State<VotePage> {
                       SizedBox(
                         width: 20,
                       ),
-                      Text(Get.arguments != null
-                          ? Get.arguments["fullName"].toString()
-                          : 'loading...'),
+                      Text(
+                          Get.arguments != null
+                              ? Get.arguments["fullName"].toString()
+                              : 'loading...',
+                          style: TextStyle(
+                              fontSize: 20.0, fontWeight: FontWeight.bold)),
                     ],
                   ),
                 ),
