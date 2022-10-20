@@ -48,6 +48,9 @@ class _VotePageState extends State<VotePage> {
                               AssetImage('assets/images/contestant.jpg'),
                         ),
                       ),
+                      SizedBox(
+                        width: 20,
+                      ),
                       Text(Get.arguments != null
                           ? Get.arguments["fullName"].toString()
                           : 'loading...'),
