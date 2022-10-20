@@ -56,7 +56,7 @@ class _VotePageState extends State<VotePage> {
                               ? Get.arguments["fullName"].toString()
                               : 'loading...',
                           style: TextStyle(
-                              fontSize: 15.0, fontWeight: FontWeight.bold)),
+                              fontSize: 16.0, fontWeight: FontWeight.bold)),
                     ],
                   ),
                 ),
