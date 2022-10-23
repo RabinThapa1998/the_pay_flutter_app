@@ -109,7 +109,8 @@ class _VotePageState extends State<VotePage> {
                                 'Submit ${paymentSchema[index]["votes"].toString()} votes for Rs ${paymentSchema[index]["cost"].toString()}'),
                             trailing: ElevatedButton(
                               onPressed: () {
-                                Get.to(EsewaEpay());
+                                // Get.to(EsewaEpay());
+                                _bottomSheet(context);
                               },
                               child: Text("Pay"),
                             ),
@@ -121,5 +122,15 @@ class _VotePageState extends State<VotePage> {
         ),
       ),
     );
+  }
+
+  _bottomSheet(context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext c) {
+          return Container(
+            child: const SizedBox(height: 400, child: Text("Bottom Sheet")),
+          );
+        });
   }
 }
