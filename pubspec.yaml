@@ -29,4 +29,4 @@ flutter:
     - assets/
     - assets/images/
     - assets/svgs/
-    - assets/epay/
+    - assets/epay/epay_request.html

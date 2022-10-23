@@ -7,12 +7,12 @@ import 'package:flutter/services.dart';
 import 'package:webview_flutter/platform_interface.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class EsewaPay extends StatefulWidget {
+class EsewaEpay extends StatefulWidget {
   @override
   _TestPageState createState() => _TestPageState();
 }
 
-class _TestPageState extends State<EsewaPay> {
+class _TestPageState extends State<EsewaEpay> {
   Completer<WebViewController> _controller = Completer<WebViewController>();
 
   late WebViewController _webViewController;
@@ -20,7 +20,6 @@ class _TestPageState extends State<EsewaPay> {
   String testUrl = "https://pub.dev/packages/webview_flutter";
 
   _loadHTMLfromAsset() async {
-    print("loading html");
     String file = await rootBundle.loadString("assets/epay/epay_request.html");
     _webViewController.loadUrl(Uri.dataFromString(file,
             mimeType: 'text/html', encoding: Encoding.getByName('utf-8'))

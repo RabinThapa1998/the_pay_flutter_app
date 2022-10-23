@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:the_pay/screens/EsewaPay.dart';
+import 'package:the_pay/screens/EsewaEpay.dart';
 
 class VotePage extends StatefulWidget {
   VotePage({Key? key}) : super(key: key);
@@ -109,7 +109,7 @@ class _VotePageState extends State<VotePage> {
                                 'Submit ${paymentSchema[index]["votes"].toString()} votes for Rs ${paymentSchema[index]["cost"].toString()}'),
                             trailing: ElevatedButton(
                               onPressed: () {
-                                Get.to(EsewaPay());
+                                Get.to(EsewaEpay());
                               },
                               child: Text("Pay"),
                             ),
