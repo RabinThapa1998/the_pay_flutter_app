@@ -129,8 +129,17 @@ class _VotePageState extends State<VotePage> {
         context: context,
         builder: (BuildContext c) {
           return Container(
-            child: const SizedBox(height: 400, child: Text("Bottom Sheet")),
-          );
+              height: 400,
+              child: ListView(children: [
+                Column(
+                  children: [Text("Esewa")],
+                )
+              ]),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(50),
+                topRight: Radius.circular(50),
+              )));
         });
   }
 }
