@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:the_pay/screens/EsewaEpay.dart';
+import 'package:the_pay/components/bottomSheetComponent.dart';
 
 class VotePage extends StatefulWidget {
   VotePage({Key? key}) : super(key: key);
@@ -128,40 +129,7 @@ class _VotePageState extends State<VotePage> {
     showModalBottomSheet(
         context: context,
         builder: (BuildContext c) {
-          return Container(
-              height: 400,
-              child: ListView(children: [
-                Row(
-                  children: [
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.grey[200],
-                          onPrimary: Colors.black,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4.0),
-                          ),
-                        ),
-                        onPressed: () {
-                          Get.to(EsewaEpay());
-                        },
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              'assets/images/esewa.png',
-                              height: 100,
-                              width: 100,
-                            ),
-                            Text("Esewa"),
-                          ],
-                        )),
-                  ],
-                )
-              ]),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(50),
-                topRight: Radius.circular(50),
-              )));
+          return bottomSheetComponent();
         });
   }
 }
