@@ -131,8 +131,30 @@ class _VotePageState extends State<VotePage> {
           return Container(
               height: 400,
               child: ListView(children: [
-                Column(
-                  children: [Text("Esewa")],
+                Row(
+                  children: [
+                    ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.grey[200],
+                          onPrimary: Colors.black,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4.0),
+                          ),
+                        ),
+                        onPressed: () {
+                          Get.to(EsewaEpay());
+                        },
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              'assets/images/esewa.png',
+                              height: 100,
+                              width: 100,
+                            ),
+                            Text("Esewa"),
+                          ],
+                        )),
+                  ],
                 )
               ]),
               decoration: BoxDecoration(

@@ -8,7 +8,7 @@ import 'dart:convert';
 List<Programs> programsList = [];
 Future<List<Programs>> fetchPrograms() async {
   final response = await get(
-      Uri.parse('http://192.168.1.87:8000/api/v1/dashboard/programs'));
+      Uri.parse('http://192.168.1.70:8000/api/v1/dashboard/programs'));
   if (response.statusCode == 200) {
     var res = jsonDecode(response.body.toString());
     print(res);

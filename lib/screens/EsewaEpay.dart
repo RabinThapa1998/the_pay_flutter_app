@@ -28,13 +28,13 @@ class _TestPageState extends State<EsewaEpay> {
 
   // ePay deatils
   double tAmt = 1000;
-  double amt = 800;
+  double amt = 900;
   double txAmt = 100;
-  double psc = 50;
-  double pdc = 50;
+  double psc = 0;
+  double pdc = 0;
   String scd = "EPAYTEST";
-  String su = "https://github.com/kaledai";
-  String fu = "https://refactoring.guru/design-patterns/factory-method";
+  String su = "https://github.com/RabinThapa1998";
+  String fu = "https://developer.esewa.com.np/#/epay";
 
   @override
   void initState() {
@@ -46,18 +46,8 @@ class _TestPageState extends State<EsewaEpay> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     setState(() {
-      //       String pid = UniqueKey().toString();
-      //       _webViewController.evaluateJavascript(
-      //           'requestPayment(tAmt = $tAmt, amt = $amt, txAmt = $txAmt, psc = $psc, pdc = $pdc, scd = "$scd", pid = "$pid", su = "$su", fu = "$fu")');
-      //     });
-      //   },
-      //   child: Icon(Icons.add),
-      // ),
       appBar: AppBar(
-        leading: SizedBox.shrink(),
+        title: Text("ePay"),
       ),
       body: WebView(
         initialUrl: "about:blank",
@@ -69,11 +59,9 @@ class _TestPageState extends State<EsewaEpay> {
           ),
         ]),
         onPageFinished: (data) {
-          setState(() {
-            String pid = UniqueKey().toString();
-            _webViewController.evaluateJavascript(
-                'requestPayment(tAmt = $tAmt, amt = $amt, txAmt = $txAmt, psc = $psc, pdc = $pdc, scd = "$scd", pid = "$pid", su = "$su", fu = "$fu")');
-          });
+          String pid = UniqueKey().toString();
+          _webViewController.evaluateJavascript(
+              'requestPayment(tAmt = $tAmt, amt = $amt, txAmt = $txAmt, psc = $psc, pdc = $pdc, scd = "$scd", pid = "$pid", su = "$su", fu = "$fu")');
         },
         onWebViewCreated: (webViewController) {
           // _controller.complete(webViewController);

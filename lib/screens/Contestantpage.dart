@@ -9,7 +9,7 @@ import 'dart:convert';
 List<Contestants> contestantsList = [];
 Future<List<Contestants>> fetchContestants() async {
   final response = await get(
-      Uri.parse('http://192.168.1.87:8000/api/v1/dashboard/contestants'));
+      Uri.parse('http://192.168.1.70:8000/api/v1/dashboard/contestants'));
   if (response.statusCode == 200) {
     var res = jsonDecode(response.body.toString());
     print(res);
